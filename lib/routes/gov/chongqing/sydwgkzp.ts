@@ -24,8 +24,10 @@ export const route: Route = {
 };
 
 async function handler(ctx: Context): Promise<Data> {
+    type YearPath = number | '2024_490546';
+    
     // 获取用户输入的 year
-    const { year = currentYear() }: { year?: number } = ctx.req.param();
+    let { year = currentYear() }: { year?: YearPath } = ctx.req.param();
 
     if (year === 2025) {
         year = "2024_490546";
