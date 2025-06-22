@@ -27,6 +27,10 @@ async function handler(ctx: Context): Promise<Data> {
     // 获取用户输入的 year
     const { year = currentYear() }: { year?: number } = ctx.req.param();
 
+    if (year === 2025) {
+        year = "2024_490546";
+    }
+
     // 替换 url
     const sydwgkzpUrl = `https://rlsbj.cq.gov.cn/zwxx_182/sydw/sydwgkzp${year}/`;
 
